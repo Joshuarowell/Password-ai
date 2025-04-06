@@ -277,3 +277,34 @@ python3 ai_password_enhancer.py
 | Microphone not detected | Check permissions (Linux: `sudo usermod -aG audio $USER`) |
 | `gTTS` API blocked (Linux) | Use a VPN or proxy |
 | `rockyou.txt` missing | Download from Kali or [SecLists](https://github.com/danielmiessler/SecLists) |
+
+
+import glob  # Add this import at the top
+
+class AIPasswordEnhancer:
+    def __init__(self):
+        # ... existing init code ...
+        self.downloads_path = os.path.join(os.path.expanduser('~'), 'Downloads')
+        
+    # ... existing methods ...
+
+    def find_pcap_files(self):
+        """Find all PCAP files in downloads directory"""
+        pcap_files = []
+        for ext in ('*.pcap', '*.pcapng'):
+            pcap_files.extend(glob.glob(os.path.join(self.downloads_path, ext)))
+        return [os.path.basename(f) for f in pcap_files]
+
+    def process_command(self, command):
+        """Process user commands"""
+        self.last_input = command
+        
+        # Add new PCAP command handler
+        if "pcap" in command and ("grab" in command or "collect" in command):
+            pcap_files = self.find_pcap_files()
+            if pcap_files:
+                return f"Found {len(pcap_files)} PCAP files: {', '.join(pcap_files[:3])}" + \
+                      (" and more..." if len(pcap_files) > 3 else "")
+            return "No PCAP files found in Downloads directory"
+        
+        # ... rest of existing command processing ...
