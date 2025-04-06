@@ -244,3 +244,36 @@ class AIPasswordEnhancer:
 if __name__ == "__main__":
     ai = AIPasswordEnhancer()
     ai.communicate()
+
+
+
+    python --version
+  pip --version
+
+pip install numpy pyaudio sounddevice soundfile SpeechRecognition gTTS pygame
+
+pip install pipwin
+  pipwin install pyaudio
+
+python ai_password_enhancer.py
+
+sudo apt update && sudo apt install python3 python3-pip
+
+sudo apt install portaudio19-dev python3-dev libasound2-dev ffmpeg
+pip3 install numpy pyaudio sounddevice soundfile SpeechRecognition gTTS pygame
+
+sudo gunzip /usr/share/wordlists/rockyou.txt.gz
+  cp /usr/share/wordlists/rockyou.txt ~/ai_password_enhancer/
+
+python3 ai_password_enhancer.py
+
+
+
+⚜️Troubleshooting⚜️
+| Issue | Solution |
+|-------|----------|
+| `pyaudio` fails (Windows) | Use `pipwin install pyaudio` |
+| PortAudio errors (Linux) | Install `portaudio19-dev` |
+| Microphone not detected | Check permissions (Linux: `sudo usermod -aG audio $USER`) |
+| `gTTS` API blocked (Linux) | Use a VPN or proxy |
+| `rockyou.txt` missing | Download from Kali or [SecLists](https://github.com/danielmiessler/SecLists) |
