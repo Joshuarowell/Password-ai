@@ -308,3 +308,5 @@ class AIPasswordEnhancer:
             return "No PCAP files found in Downloads directory"
         
         # ... rest of existing command processing ...
+
+if you want the rest of it it cost money because it is illegal to crack wifi passwords 
